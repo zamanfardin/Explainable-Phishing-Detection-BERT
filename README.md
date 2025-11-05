@@ -74,3 +74,13 @@ Write detailed project documentation in GitHub README.
 Prepare research paper or poster summarizing results.
 
 Submit to faculty / journal (Q1–Q2 cybersecurity or AI publication).
+
+## Dataset and Code
+The main dataset (250 MB CSV) is hosted on Google Drive for convenience:  
+**https://drive.google.com/drive/folders/1QtjJDmDlejgnGO1EKfwEI7mOgHp4ilIJ?usp=sharing**
+
+
+## Dataset Resource
+The Dataset Resources is hosted on Google Drive for convenience:  
+**https://drive.google.com/drive/folders/1QhUeoXNnCNg-5LSOp52q_-YF6_SemGCu?usp=drive_link**
+
