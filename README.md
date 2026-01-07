@@ -1,86 +1,134 @@
-Hey there!
-My name is Fardin Zaman, and I’m currently pursuing my Master’s in Cyber Security (Technical) at the University of Southern Queensland, Australia. My Personal Web: fardinzaman.dev
+Intelligent Threat Detection: Leveraging AI & NLP for Modern Cybersecurity
+Welcome
 
-This repository contains our research project titled “Explainable Phishing Detection: Interpreting BERT-Based Classification Through Linguistic and Contextual Feature Analysis”.
-The goal of this project is to develop a trustworthy phishing email detection system that not only detects phishing attempts accurately but also explains why those decisions are made  while testing how resistant the model is to subtle adversarial manipulations.
+This repository contains the complete research artefacts for my MSc Cyber Security thesis. The work investigates how modern transformer-based natural language processing models can be applied to phishing email detection and, critically, how their decisions can be made interpretable and trustworthy.
 
+Rather than focusing solely on classification accuracy, this project emphasises interpretability, transparency, and real-world cybersecurity applicability.
 
-Phase 1: Data Preprocessing (Completed)
+About the Project
 
-------Loaded and cleaned raw dataset (processed_data.csv).
+Phishing remains one of the most prevalent and effective cyberattack vectors. While deep learning models such as BERT demonstrate strong performance, they are often criticised for operating as black boxes. This research directly addresses that limitation by combining:
 
-------Filled missing subject fields and combined subject + body into a unified text column.
+Transformer-based embeddings (BERT and DistilBERT)
 
-------Removed null entries and exported final dataset (Research_Dataset_Final.csv).
+Classical, well-understood machine learning classifiers
 
-------Dataset ready for modeling and analysis.
+Multiple layers of explainable AI (XAI) techniques
 
-**Phase 2:** Exploratory Data Analysis (Week 1–2)
+The result is a phishing detection pipeline that is both effective and understandable to human analysts.
 
-Perform EDA to understand text distributions, word frequencies, and class imbalance.
+Research Objectives
 
-Visualize phishing vs. legitimate patterns (e.g., using WordCloud, TF-IDF, n-grams).
+Detect phishing emails using transformer-based text representations
 
-Document key insights about linguistic characteristics.
+Compare BERT, DistilBERT, and a combined hierarchical embedding approach
 
-**Phase 3:** Model Development (Week 3–4)
+Evaluate Logistic Regression and Random Forest classifiers on deep embeddings
 
-Load the final dataset and split into train/validation/test sets.
+Explain why an email is classified as phishing or legitimate
 
-Fine-tune BERT / DistilBERT for phishing detection.
+Connect model behaviour to human-interpretable linguistic patterns
 
-Compare with classical baselines (e.g., Logistic Regression, SVM, LSTM).
+Methodology Overview
+Data Preparation
 
-Evaluate metrics: Accuracy, Precision, Recall, F1-score, ROC-AUC.
-**
-Phase 4:** Explainable AI Integration (Week 5–6)
+Email data cleaned and standardised
 
-Apply LIME, SHAP, or Integrated Gradients to interpret BERT predictions.
+Binary labels: Phishing (spam) and Legitimate (ham)
 
-Visualize influential words and contextual cues driving decisions.
+Representation Learning
 
-Summarize which linguistic features signal phishing intent.
+BERT embeddings: rich contextual representations (768 dimensions)
 
-**Phase 5:** Adversarial Robustness Testing (Week 7)
+DistilBERT embeddings: lightweight and computationally efficient (768 dimensions)
 
-Implement adversarial perturbations (synonym swaps, paraphrasing, misspellings).
+Combined embeddings: concatenation of BERT and DistilBERT (1536 dimensions)
 
-Measure how small edits affect model predictions (robustness score).
+The combined hierarchical embedding is a central contribution of this thesis.
 
-Combine explainability with robustness to study model weaknesses.
-**
-Phase 6:** Multilingual Extension (Week 8–9)
+Model Training
 
-Integrate language detection + translation pipeline for non-English samples.
+Each embedding strategy is evaluated using two classifiers:
 
-Re-run classification to test translation-based approach.
+Embedding Type	Logistic Regression	Random Forest
+BERT	Yes	Yes
+DistilBERT	Yes	Yes
+BERT + DistilBERT	Yes	Yes
 
-Compare performance between monolingual and multilingual setups.
+All trained models and scalers are saved to ensure full reproducibility.
 
-**Phase 7:** Final Evaluation & Optimization (Week 10)
+Evaluation
 
-Summarize model performance and visualization results.
+Model performance is assessed using:
 
-Optimize training parameters for accuracy and robustness.
+Confusion matrices
 
-Prepare final comparative report (English vs multilingual, original vs adversarial).
+ROC curves
 
-**Phase 8:** Documentation & Publication (Week 11)
+Precision–recall curves
 
-Clean up code and add comments for reproducibility.
+Detailed classification reports (CSV)
 
-Write detailed project documentation in GitHub README.
+These metrics are particularly relevant for imbalanced phishing datasets and real-world email filtering scenarios.
 
-Prepare research paper or poster summarizing results.
+Explainability and Interpretation
 
-Submit to faculty / journal (Q1–Q2 cybersecurity or AI publication).
+A core strength of this project is its focus on explainability and model transparency.
 
-## Dataset and Code
-The main dataset (250 MB CSV) is hosted on Google Drive for convenience:  
-**https://drive.google.com/drive/folders/1QtjJDmDlejgnGO1EKfwEI7mOgHp4ilIJ?usp=sharing**
+SHAP Analysis
 
+Global feature importance identifying influential embedding dimensions
 
-## Dataset Resource
-The Dataset Resources is hosted on Google Drive for convenience:  
-**https://drive.google.com/drive/folders/1QhUeoXNnCNg-5LSOp52q_-YF6_SemGCu?usp=drive_link**
+Local explanations illustrating how individual predictions are formed
+
+Attention Analysis
+
+Token-level attention visualisations from BERT
+
+Identification of suspicious words, phrases, and contextual cues
+
+Linguistic Feature Analysis
+
+Human-interpretable features such as word count, sentiment polarity, and lexical diversity
+
+Clear linguistic differences between phishing and legitimate emails
+
+Unified Interpretability Framework
+
+Integration of SHAP explanations, attention analysis, and linguistic features
+
+End-to-end explanations for individual email predictions
+
+A primary research contribution of this thesis
+
+Repository Structure
+├── data/                    # Embeddings and labels
+├── models/                  # Trained models and scalers
+├── results/                 # Metrics, plots, and evaluation outputs
+├── explainability/          # SHAP and token-level analyses
+├── attention_analysis/      # BERT attention visualisations
+└── unified_interpretability # Combined interpretability case studies
+Key Findings
+
+Hierarchical embeddings improve or stabilise classification performance
+
+Classical machine learning models perform competitively on transformer embeddings
+
+Explainability methods reveal meaningful phishing indicators
+
+Model decisions align with known linguistic and behavioural phishing patterns
+
+Practical Relevance
+
+In cybersecurity, trust and accountability are essential. This research demonstrates that advanced NLP-based detection systems can be accurate while remaining transparent and operationally useful. The proposed approach is suitable for integration into real-world email gateways, SOC environments, and future AI-driven security platforms.
+
+Future Work
+
+Integration with live or real-time email systems
+
+Extension to large language models
+
+Deployment-focused phishing detection pipelines
+
+Multilingual phishing detection and analysis
 
