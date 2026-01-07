@@ -1,0 +1,7 @@
+Example,True Label,Predicted,Confidence,Correct,Word Count,Lex Diversity,Sentiment
+1,SPAM,SPAM,99.67%,✓,48,0.938,0.320
+2,SPAM,SPAM,85.00%,✓,30,0.900,0.450
+3,HAM,HAM,89.33%,✓,353,0.561,0.091
+4,HAM,HAM,96.67%,✓,124,0.766,0.048
+5,SPAM,HAM,81.00%,✗,34,1.000,0.200
+6,HAM,SPAM,79.67%,✗,121,0.744,-0.153
