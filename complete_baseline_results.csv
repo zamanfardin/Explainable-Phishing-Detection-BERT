@@ -1,0 +1,8 @@
+Model,Accuracy,Precision,Recall,F1-Score
+Naive Bayes,97.11%,97.12%,97.09%,97.10%
+SVM (LinearSVC),99.21%,99.20%,99.21%,99.21%
+Logistic Regression,98.41%,98.39%,98.43%,98.41%
+Random Forest,92.38%,92.50%,92.57%,92.38%
+BERT only,88.92%,—,—,—
+DistilBERT only,87.44%,—,—,—
+Combined BERT+DistilBERT+LR (Ours),91.41%,91.00%,91.00%,91.00%

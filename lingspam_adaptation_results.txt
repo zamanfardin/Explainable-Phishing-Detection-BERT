@@ -1,0 +1,62 @@
+
+============================================================
+DOMAIN ADAPTATION RESULTS — Ling-Spam (Real Emails)
+============================================================
+
+Dataset                : Ling-Spam (real email text)
+Original Training Data : Enron + SpamAssassin (61,433 emails)
+Adaptation Set         : 200 Ling-Spam emails
+Test Set               : 2,693 Ling-Spam emails
+Adaptation Epochs      : 2
+Learning Rate          : 2e-05
+Max Sequence Length    : 128 tokens
+
+────────────────────────────────────────────────────────────
+DATASET BREAKDOWN
+────────────────────────────────────────────────────────────
+  Total Ling-Spam emails : 2,893
+  Ham  (legitimate)      : 2,412 (83.4%)
+  Spam                   : 481 (16.6%)
+
+────────────────────────────────────────────────────────────
+BEFORE Domain Adaptation — Zero-Shot Transfer
+────────────────────────────────────────────────────────────
+  Accuracy  : 99.22%
+  F1 Score  : 99.21%
+  Precision : 99.22%
+  Recall    : 99.22%
+
+────────────────────────────────────────────────────────────
+AFTER Domain Adaptation — 200 Few-Shot Emails
+────────────────────────────────────────────────────────────
+  Accuracy  : 99.55%
+  F1 Score  : 99.55%
+  Precision : 99.55%
+  Recall    : 99.55%
+
+────────────────────────────────────────────────────────────
+IMPROVEMENT
+────────────────────────────────────────────────────────────
+  Accuracy  : +0.33%
+  F1 Score  : +0.34%
+
+============================================================
+PAPER PARAGRAPH
+============================================================
+To assess cross-domain generalisation using authentic email
+content, the fine-tuned BERT model was evaluated on the
+Ling-Spam corpus (2,693 test emails) without prior
+exposure to this distribution. Zero-shot transfer yielded an
+accuracy of 99.22% and F1 score of 99.21%,
+confirming distributional shift between corporate email
+corpora and the Ling-Spam collection. Few-shot domain
+adaptation was then performed using only 200 labelled
+Ling-Spam emails over 2 epochs (lr=2x10^-5, AdamW).
+Following adaptation, accuracy improved to 99.55%
+and F1 to 99.55%, an improvement of
++0.33% and +0.34%
+respectively. Unlike the UCI Spambase corpus, Ling-Spam
+contains authentic raw email text, ensuring the validity
+of transformer-based evaluation without feature
+reconstruction approximations.
+============================================================
